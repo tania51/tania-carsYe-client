@@ -1,0 +1,6 @@
+.nav-active .active {
+    color: #f97316;
+}
+.nav-active a:hover {
+    color:aliceblue;
+}
