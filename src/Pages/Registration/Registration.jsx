@@ -3,6 +3,8 @@ import Navbar from "../../components/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
+import auth from "../../Firebase/firebase.config";
 
 
 const Registration = () => {
@@ -26,9 +28,11 @@ const Registration = () => {
     const registerHandeler = e => {
         e.preventDefault();
         const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        console.log(name, photo, email, password);
 
         if(! /^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[^\w\s])\S{6,}$/.test(password)) {
             Swal.fire({
@@ -42,6 +46,9 @@ const Registration = () => {
             createUser(email, password)
             .then(res => {
                 console.log(res);
+                updateProfile(auth.currentUser, {
+                    displayName: name, photoURL: photo
+                })
                 Swal.fire({
                     icon: 'success',
                     title: 'Successfully Created User!!'
@@ -70,6 +77,18 @@ const Registration = () => {
                 <div className="hero-content w-full">
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={registerHandeler} className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" placeholder="Enter Name" name="name" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo</span>
+                                </label>
+                                <input type="text" placeholder="Enter Photo URL" name="photo" className="input input-bordered" required />
+                            </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>

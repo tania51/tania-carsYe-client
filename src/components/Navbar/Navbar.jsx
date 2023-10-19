@@ -1,12 +1,27 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css"
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext);
+    // console.log(user);
+
+    const logOutHandeler = () => {
+        logOut()
+            .then(res => {
+                console.log(res.user);
+            })
+            .catch(err => {
+                console.error(err);
+            })
+    }
+
     const navLinks = <div className="space-x-5 text-lg uppercase font-semibold nav-active">
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/addProduct">Add Product</NavLink>
+        <NavLink to="/addProduct">Add Car</NavLink>
         <NavLink to="/myCart">My Cart</NavLink>
     </div>
 
@@ -30,7 +45,24 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/login" className="text-lg font-medium bg-orange-600 rounded btn border-none text-white px-6 hover:bg-orange-600 hover:text-gray-300"><button>Login</button></Link>
+
+                    {
+                        user ? <>
+                            <div className="flex gap-3 items-center">
+                                <h4 className="text-lg">{user?.displayName}</h4>
+                                <div className="avatar">
+                                    <div className="w-10 rounded-full ring ring-orange-500 ring-offset-base-100 ring-offset-2">
+                                        <img src={user?.photoURL} />
+                                    </div>
+                                </div>
+                            </div>
+                            <button onClick={logOutHandeler} className="text-lg font-medium bg-orange-600 rounded btn border-none text-white px-6 hover:bg-orange-600 hover:text-gray-300 ml-3">Log Out</button>
+                        </>
+                            :
+                            <Link to="/login" className="text-lg font-medium bg-orange-600 rounded btn border-none text-white px-6 hover:bg-orange-600 hover:text-gray-300"><button>Login</button></Link>
+                    }
+
+
                 </div>
             </div>
         </div>

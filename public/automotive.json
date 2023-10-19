@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "brandName": "Toyota",
+        "brandImage": "https://i.ibb.co/LQZLQ44/photo-1629019625736-89ff131a723c.jpg"
+    },
+    {
+        "id": 2,
+        "brandName": "Ford",
+        "brandImage": "https://i.ibb.co/8XsQgGD/photo-1547744152-14d985cb937f.jpg"
+    },
+    {
+        "id": 3,
+        "brandName": "BMW",
+        "brandImage": "https://i.ibb.co/2KKjjjR/pexels-photo-99435.jpg"
+    },
+    {
+        "id": 4,
+        "brandName": "Mercedes-Benz",
+        "brandImage": "https://i.ibb.co/XbJyLsK/pexels-photo-136872.jpg"
+    },
+    {
+        "id": 5,
+        "brandName": "Tesla",
+        "brandImage": "https://i.ibb.co/TP7F28m/pexels-photo-12179363.jpg"
+    },
+    {
+        "id": 6,
+        "brandName": "Honda",
+        "brandImage": "https://i.ibb.co/182vsyT/free-photo-of-honda-accord-ex-l-on-a-gravel-road.jpg"
+    }
+]

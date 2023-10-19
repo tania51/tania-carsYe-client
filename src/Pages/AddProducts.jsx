@@ -1,9 +1,14 @@
+import AddProductForm from "../components/AddProductForm";
+import Footer from "../components/Footer/Footer";
+import Navbar from "../components/Navbar/Navbar";
 
 
 const AddProducts = () => {
     return (
         <div>
-            All products are here
+            <Navbar></Navbar>
+            <AddProductForm></AddProductForm>
+            <Footer></Footer>
         </div>
     );
 };
