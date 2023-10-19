@@ -11,6 +11,7 @@ const BrandProducts = () => {
     // console.log(carBrandName);
     // console.log(carLoader);
     const [cars, setCars] = useState([]);
+    const [loading, setLoading] = useState(true)
     
 
     useEffect(() => {
@@ -21,8 +22,15 @@ const BrandProducts = () => {
             const filterCars =  data.filter(car => car.brandName === carBrandName.brandName && car.Name);
             // console.log(filterCars);
             setCars(filterCars);
+            setLoading(false);
         })
     }, [carBrandName.brandName])
+
+    if( loading ) {
+        return <div className="w-full flex justify-center h-screen items-center">
+            <span className="loading loading-spinner text-error"></span>
+        </div>
+    }
 
 
     return (

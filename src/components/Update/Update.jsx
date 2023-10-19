@@ -1,33 +1,18 @@
+import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
 
 
-
-const AddProductForm = () => {
-
-    
-    const addCarHandeler = e => {
-        e.preventDefault();
-        console.log('add car works perfectly');
-        const form = e.target;
-        const name = form.name.value;
-        const brand = form.brand.value;
-        const type = form.carType.value;
-        const photo = form.photo.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const shortDes = form.shortDes.value;
-        const addCarInfo = { name, brand, type, photo, price, rating, shortDes }
-
-        console.log(addCarInfo);
-    }
-
+const Update = () => {
     return (
         <div>
+            <Navbar></Navbar>
+
             {/* add products form */}
             <div className="hero bg-base-200 px-32">
                 <div className="hero-content w-full my-20">
                     <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 py-6 px-4">
-                        <form onSubmit={addCarHandeler}>
-                            <div className="card-body grid md:grid-cols-2 gap-x-5 mb-2 pb-0">
+                        <form>
+                            <div className="card-body grid md:grid-cols-2 mb-2 pb-0">
                                 {/* car name */}
                                 <div className="form-control">
                                     <label className="label">
@@ -41,13 +26,13 @@ const AddProductForm = () => {
                                     <label className="label">
                                         <span className="label-text">Brand Name</span>
                                     </label>
-                                    <input type="text" placeholder="Enter Brand Name" name="brand" className="input input-bordered" required />
+                                    <input type="text" placeholder="Enter Brand Name" name="name" className="input input-bordered" required />
                                 </div>
 
 
                                 {/* type */}
                                 <div className="form-control">
-                                    <label className="label">
+                                    <label className="label" for="car-type">
                                         <span className="label-text">Type of Cars</span>
                                     </label>
                                     <select className="input input-bordered" name="carType" id="car-type">
@@ -69,6 +54,15 @@ const AddProductForm = () => {
                                     <input type="text" placeholder="Enter Photo URL" name="photo" className="input input-bordered" required />
                                 </div>
 
+                                {/* Type of cars */}
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Brand Name</span>
+                                    </label>
+
+                                    <input type="text" placeholder="Enter Brand Name" name="name" className="input input-bordered" required />
+                                </div>
+
                                 {/* Price */}
                                 <div className="form-control">
                                     <label className="label">
@@ -83,33 +77,35 @@ const AddProductForm = () => {
                                         <span className="label-text">Rating</span>
                                     </label>
 
-                                    <input type="text" placeholder="Give Rating" name="rating" className="input input-bordered" required />
+                                    <input type="text" placeholder="Give Rating" name="name" className="input input-bordered" required />
                                 </div>
-
-                                
-
-                            </div>
-
-                            <div className="card-body mt-0 pt-0 pb-10">
 
                                 {/* Short Description */}
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Description</span>
                                     </label>
-                                    <textarea className="input input-bordered h-32" name="shortDes" id="" cols="30" rows="5"></textarea>
+                                    <textarea className="input input-bordered" name="short-des" id="" cols="30" rows="5"></textarea>
                                 </div>
 
+                            </div>
+
+                            <div className="card-body mt-0 pt-0 pb-10">
+
+
                                 <div className="form-control mt-3">
-                                    <button className="btn btn-primary">Add Car</button>
+                                    <button className="btn btn-primary">Update</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+
+            {/* footer */}
+            <Footer></Footer>
         </div>
     );
 };
 
-export default AddProductForm;
+export default Update;
