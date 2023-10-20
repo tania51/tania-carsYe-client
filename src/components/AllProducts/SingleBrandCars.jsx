@@ -17,7 +17,7 @@ const SingleBrandCars = ({ car }) => {
                         <h2 className="card-title text-xl"><span className="text-bold">Car Name :</span> <span className="text-orange-500">{Name}</span></h2>
                         <p className="text-lg"><span className="text-bold">BrandName :</span> {brandName}</p>
                         <p className="text-lg"><span className="text-bold">Type Of Car :</span> {type}</p>
-                        <p className="text-lg"><span className="text-bold">Price :</span> $ {Price}</p>
+                        <p className="text-lg"><span className="text-bold">Price :</span>  {Price}</p>
                         <p className="text-lg"><span className="text-bold">Rating :</span> <span className="text-orange-500">{Rating}</span></p>
                     </div>
                     <Link to={`/details/${_id}`}><button className="btn bg-transparent hover:bg-transparent hover:text-orange-500 border border-t-[#0b1220] border-t-0 shadow-2xl w-full mb-2">Details</button></Link>

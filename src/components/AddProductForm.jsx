@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import Button from "./Button/Button";
 
 
@@ -19,6 +20,26 @@ const AddProductForm = () => {
         const addCarInfo = { name, brand, type, photo, price, rating, shortDes }
 
         console.log(addCarInfo);
+
+        fetch('http://localhost:5001/addCar', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(addCarInfo)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Car Added Successfully!!'
+                  })
+            }
+            form.reset();
+        })
+
     }
 
     return (

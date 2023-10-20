@@ -1,17 +1,33 @@
+import Swal from "sweetalert2";
+import Button from "../Button/Button";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 
 
 const Update = () => {
+
+    const updateHandeler = e => {
+        e.preventDefault();
+        const form = e.target;
+        Swal.fire({
+            icon: 'success',
+            title: 'Car Information Updated Successfully'
+          })
+
+        form.reset();
+
+    }
+
+
     return (
         <div>
             <Navbar></Navbar>
 
             {/* add products form */}
             <div className="hero bg-base-200 px-32">
-                <div className="hero-content w-full my-20">
+                <div className="hero-content w-full mb-20 mt-40">
                     <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 py-6 px-4">
-                        <form>
+                        <form onSubmit={updateHandeler}>
                             <div className="card-body grid md:grid-cols-2 mb-2 pb-0">
                                 {/* car name */}
                                 <div className="form-control">
@@ -32,7 +48,7 @@ const Update = () => {
 
                                 {/* type */}
                                 <div className="form-control">
-                                    <label className="label" for="car-type">
+                                    <label className="label">
                                         <span className="label-text">Type of Cars</span>
                                     </label>
                                     <select className="input input-bordered" name="carType" id="car-type">
@@ -94,7 +110,7 @@ const Update = () => {
 
 
                                 <div className="form-control mt-3">
-                                    <button className="btn btn-primary">Update</button>
+                                    <Button>Update</Button>
                                 </div>
                             </div>
                         </form>

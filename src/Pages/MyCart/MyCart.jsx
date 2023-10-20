@@ -3,14 +3,15 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
-import SingleUserCar from "./SingleUserCar";
+import Button from "../../components/Button/Button";
+import Swal from "sweetalert2";
 
 
 const MyCart = () => {
-    
 
     const carLoader = useLoaderData();
-    // console.log(carLoader);
+
+
 
     const { user } = useContext(AuthContext);
     // console.log(user.email);
@@ -18,24 +19,78 @@ const MyCart = () => {
     const usersCar = carLoader.filter(car => car.email === user.email);
     // console.log(usersCar);
 
+    const deletedCar = id => {
+        // console.log('car deleted successfully');
+        // console.log(id);
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5001/myCart/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(result => result.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data?.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                            //   const remainig =  cars.filter(car => car._id === _id)
+                            // //   setCars(remainig);
+                            // console.log(remainig);
+
+                        }
+                    })
+
+
+            }
+        })
+    }
+
     return (
         <div>
             <Navbar></Navbar>
 
             {/* users all cars are here using card */}
-        {
-            usersCar.length === 0 ? <div className="h-[70vh] flex justify-center items-center"><h2 className="text-5xl text-white text-center">No Car Found.. <br /> Please First Add Some Car !!</h2></div>
-            :
-            <div className="grid md:grid-cols-2 gap-6 px-20">
-                {
-                    usersCar.map((aCar, index) => <SingleUserCar key={index} aCar={aCar}></SingleUserCar>)
-                }
+            <div className="pt-40 pb-20">
+            {
+                usersCar.length === 0 ? <div className="h-[70vh] flex justify-center items-center"><h2 className="text-5xl text-white text-center">No Car Found.. <br /> Please First Add Some Car !!</h2></div>
+                    :
+                    <div className="grid md:grid-cols-2 gap-6 px-20">
+                        {
+                            usersCar.map((aCar) => <div key={aCar._id}>
+                                <div className="card bg-base-100 shadow-xl">
+                                    <figure><img src={aCar.Image} alt="Shoes" /></figure>
+                                    <div className="card-body">
+                                    <h2 className="card-title text-xl"><span className="text-bold">Car Name :</span> <span className="text-orange-500">{aCar.Name}</span></h2>
+                                        <p className="text-lg"><span className="text-bold">Price :</span> {aCar.Price}</p>
+                                        <div className="card-actions">
+                                            {/* <Link to={`/myCart/${id}`}>Delete</Link> */}
+                                            {/* {console.log(_id)} */}
+                                            <Button><span onClick={() => deletedCar(aCar._id)}>Delete</span></Button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>)
+                        }
+                    </div>
+
+            }
             </div>
 
-        }
-            
 
-            
+
 
             <Footer></Footer>
         </div>

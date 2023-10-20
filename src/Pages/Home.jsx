@@ -3,6 +3,7 @@ import BrandCars from "../components/BrandCars/BrandCars";
 import FAQ from "../components/FAQ/FAQ";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import RecentCar from "../components/RecentCar/RecentCar";
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <BrandCars></BrandCars>
             <FAQ></FAQ>
+            <RecentCar></RecentCar>
             <Footer></Footer>
         </div>
     );
