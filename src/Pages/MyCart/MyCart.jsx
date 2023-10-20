@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import Button from "../../components/Button/Button";
 import Swal from "sweetalert2";
@@ -10,13 +10,25 @@ import Swal from "sweetalert2";
 const MyCart = () => {
 
     const carLoader = useLoaderData();
+    const { user, loading } = useContext(AuthContext);
+    if(loading) {
+        return <div className="w-full flex justify-center h-screen items-center">
+            <span className="loading loading-spinner text-error"></span>
+        </div>
+    }
 
+    
+    const [usersCar, setUsersCar] = useState([]);
+    useEffect(() => {
+        const usersCar2 = carLoader && carLoader.filter(car => car.email === user.email);
+        setUsersCar(usersCar2);
+    }, [user.email, carLoader])
 
-
-    const { user } = useContext(AuthContext);
+    
     // console.log(user.email);
+    
 
-    const usersCar = carLoader.filter(car => car.email === user.email);
+
     // console.log(usersCar);
 
     const deletedCar = id => {
@@ -63,30 +75,30 @@ const MyCart = () => {
 
             {/* users all cars are here using card */}
             <div className="pt-40 pb-20">
-            {
-                usersCar.length === 0 ? <div className="h-[70vh] flex justify-center items-center"><h2 className="text-5xl text-white text-center">No Car Found.. <br /> Please First Add Some Car !!</h2></div>
-                    :
-                    <div className="grid md:grid-cols-2 gap-6 px-20">
-                        {
-                            usersCar.map((aCar) => <div key={aCar._id}>
-                                <div className="card bg-base-100 shadow-xl">
-                                    <figure><img src={aCar.Image} alt="Shoes" /></figure>
-                                    <div className="card-body">
-                                    <h2 className="card-title text-xl"><span className="text-bold">Car Name :</span> <span className="text-orange-500">{aCar.Name}</span></h2>
-                                        <p className="text-lg"><span className="text-bold">Price :</span> {aCar.Price}</p>
-                                        <div className="card-actions">
-                                            {/* <Link to={`/myCart/${id}`}>Delete</Link> */}
-                                            {/* {console.log(_id)} */}
-                                            <Button><span onClick={() => deletedCar(aCar._id)}>Delete</span></Button>
+                {
+                    usersCar.length === 0 ? <div className="h-[70vh] flex justify-center items-center"><h2 className="text-5xl text-white text-center">No Car Found.. <br /> Please First Add Some Car !!</h2></div>
+                        :
+                        <div className="grid md:grid-cols-2 gap-6 px-20">
+                            {
+                                usersCar.map((aCar) => <div key={aCar._id}>
+                                    <div className="card bg-base-100 shadow-xl">
+                                        <figure><img src={aCar.Image} alt="Shoes" /></figure>
+                                        <div className="card-body">
+                                            <h2 className="card-title text-xl"><span className="text-bold">Car Name :</span> <span className="text-orange-500">{aCar.Name}</span></h2>
+                                            <p className="text-lg"><span className="text-bold">Price :</span> {aCar.Price}</p>
+                                            <div className="card-actions">
+                                                {/* <Link to={`/myCart/${id}`}>Delete</Link> */}
+                                                {/* {console.log(_id)} */}
+                                                <Button><span onClick={() => deletedCar(aCar._id)}>Delete</span></Button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                            </div>)
-                        }
-                    </div>
+                                </div>)
+                            }
+                        </div>
 
-            }
+                }
             </div>
 
 

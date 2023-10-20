@@ -1,12 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
+import { MdNightlight } from 'react-icons/md';
+import { ImSun } from 'react-icons/im';
 
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const [mood, setMood] = useState(true);
+
+    
     // console.log(user);
 
     const logOutHandeler = () => {
@@ -19,15 +24,34 @@ const Navbar = () => {
             })
     }
 
+    
+        
+    
+    const day = document.getElementById('root').classList.add('day');
+    // const night = document.getElementById('root').classList.remove('day')
+
+    // const nightAndDayHandeler = () => 
+
     const navLinks = <div className="space-x-5 text-lg uppercase font-semibold nav-active">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/addProduct">Add Car</NavLink>
         <NavLink to="/myCart">My Cart</NavLink>
+        <NavLink className="pl-20" onClick={() => setMood(!mood)}>
+            {
+                mood ? <ImSun className="inline-block text-2xl">
+                    <script>{day}</script>
+                </ImSun>
+                :
+                <MdNightlight className="inline-block text-2xl"><script>{
+                        document.getElementById('root').classList.remove('day')
+                    }</script></MdNightlight>
+            }
+        </NavLink>
     </div>
-
+    
     return (
         <div>
-            <div className="navbar bg-base-100 py-6 fixed z-50">
+            <div className="navbar bg-[#0f1729] py-6 fixed z-50">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

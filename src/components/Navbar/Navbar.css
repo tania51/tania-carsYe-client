@@ -4,3 +4,57 @@
 .nav-active a:hover {
     color:aliceblue;
 }
+
+
+.day {
+    background-color:white;
+    color: #0f1729;
+}
+.day .navbar :hover {
+    color: #0f1729;
+}
+.day .navbar {
+    background-color: #f1ded1;
+}
+.day .card {
+    background-color:#f36e26;
+    color: #fff;
+    box-shadow: none;
+}
+.day .card .card-body {
+    font-weight: 900;
+}
+.day .card .card-body :hover {
+    color: rgb(236, 206, 181);
+}
+.day .collapse {
+    background-color: white;
+    color:#0f1729;
+}
+.day .collapse :hover {
+    color:#ea580c;
+}
+.day .footer {
+    background-color: #f1ded1;
+    color:#0f1729;
+    font-weight: bold;
+    font-size: 16px;
+}
+.day .hero {
+    background-color: white;
+}
+.day .hero .input {
+    background-color: white;
+    color: #9ca3af;
+}
+.day .hero .input .label {
+    color: #fff;
+}
+.day .hero .input > option {
+    color: #0f1729;
+}
+.day button {
+    color: #0a0f1b;
+    font-weight: bold;
+    font-size: 20px;
+}

@@ -8,7 +8,7 @@ const Banner = () => {
                 <div className="w-full flex justify-start pl-20">
                     <div className="text-left">
                         <h1 className="mb-5 text-left text-5xl font-bold text-orange-50">Offer 10% OFF!!</h1> 
-                        <button className="btn bg-[#0f1729] border-none hover:bg-[#0f1729] hover:text-orange-400">Pursace Code: 7853</button>
+                        <div className="btn bg-[#0f1729] border-none hover:bg-[#0f1729] hover:text-orange-400 day-btn">Pursace Code: 7853</div>
                     </div>
                 </div>
             </div>
