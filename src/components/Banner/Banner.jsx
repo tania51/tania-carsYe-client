@@ -3,13 +3,12 @@
 const Banner = () => {
     return (
         <div>
-            <div className="hero min-h-[70vh]" style={{ backgroundImage: 'url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)' }}>
-                <div className="hero-overlay bg-opacity-60"></div>
-                <div className="hero-content text-center text-neutral-content">
-                    <div className="max-w-md">
-                        <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                        <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-primary">Get Started</button>
+            <div className="hero min-h-[80vh]" style={{ backgroundImage: 'url(https://i.ibb.co/4VKPR1W/pexels-photo-1335077.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                <div className="hero-overlay bg-opacity-30"></div>
+                <div className="w-full flex justify-start pl-20">
+                    <div className="text-left">
+                        <h1 className="mb-5 text-left text-5xl font-bold text-orange-50">Offer 10% OFF!!</h1> 
+                        <button className="btn bg-[#0f1729] border-none hover:bg-[#0f1729] hover:text-orange-400">Pursace Code: 7853</button>
                     </div>
                 </div>
             </div>

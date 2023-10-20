@@ -1,3 +1,4 @@
+import Button from "./Button/Button";
 
 
 
@@ -24,7 +25,7 @@ const AddProductForm = () => {
         <div>
             {/* add products form */}
             <div className="hero bg-base-200 px-32">
-                <div className="hero-content w-full my-20">
+                <div className="hero-content w-full mb-20 mt-40">
                     <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 py-6 px-4">
                         <form onSubmit={addCarHandeler}>
                             <div className="card-body grid md:grid-cols-2 gap-x-5 mb-2 pb-0">
@@ -101,7 +102,7 @@ const AddProductForm = () => {
                                 </div>
 
                                 <div className="form-control mt-3">
-                                    <button className="btn btn-primary">Add Car</button>
+                                    <Button>Add Car</Button>
                                 </div>
                             </div>
                         </form>
