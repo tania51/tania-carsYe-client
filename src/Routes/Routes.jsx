@@ -4,6 +4,7 @@ import {
   } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import Home from "../Pages/Home";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import AddProducts from "../Pages/AddProducts";
@@ -17,6 +18,7 @@ import Update from "../components/Update/Update";
     {
       path: "/",
       element: <Layout></Layout>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: "/",

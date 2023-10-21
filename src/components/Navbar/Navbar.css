@@ -7,14 +7,14 @@
 
 
 .day {
-    background-color:white;
+    background-color:rgb(249 239 230);
     color: #0f1729;
 }
 .day .navbar :hover {
     color: #0f1729;
 }
 .day .navbar {
-    background-color: #f1ded1;
+    background-color: rgb(236, 206, 181);
 }
 .day .card {
     background-color:#f36e26;
@@ -28,14 +28,14 @@
     color: rgb(236, 206, 181);
 }
 .day .collapse {
-    background-color: white;
+    background-color: rgb(236, 206, 181);
     color:#0f1729;
 }
 .day .collapse :hover {
     color:#ea580c;
 }
 .day .footer {
-    background-color: #f1ded1;
+    background-color: rgb(236, 206, 181);
     color:#0f1729;
     font-weight: bold;
     font-size: 16px;

@@ -65,14 +65,24 @@ const BrandProducts = () => {
                             )
                         }
                     </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
+                    {
+                        cars.length === 0 ? <div className="h-[70vh] flex justify-center items-center"><h2 className="text-5xl text-white text-center">No Car Found..</h2></div>
+                        :
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {
+                            cars.map(car =>
+                                <SingleBrandCars key={car?._id} car={car}></SingleBrandCars>
+                            )
+                            }
+                        </div>
+                    }
+                    {/* <div className="grid md:grid-cols-2 gap-6">
                         {
-                            cars.slice(0, 4).map(car =>
+                            cars.map(car =>
                                 <SingleBrandCars key={car?._id} car={car}></SingleBrandCars>
                             )
                         }
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
