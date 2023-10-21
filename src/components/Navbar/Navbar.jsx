@@ -36,7 +36,7 @@ const Navbar = () => {
         <NavLink className="block md:inline py-3 md:pt-0 pl-2 md:pl-0" to="/">Home</NavLink>
         <NavLink className="block md:inline" to="/addProduct">Add Car</NavLink>
         <NavLink className="block md:inline py-3" to="/myCart">My Cart</NavLink>
-        <NavLink className="md:pl-20 inline" onClick={() => setMood(!mood)}>
+        <NavLink className="inline" onClick={() => setMood(!mood)}>
             {
                 mood ? <ImSun className="inline-block text-2xl">
                     <script>{day}</script>
@@ -61,7 +61,10 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">CarsYe</a>
+                    <div className="flex items-center text-xl font-bold text-orange-500 icon-car">
+                        <img className="w-40" src="https://i.ibb.co/TW8FbYv/logo-Car3-removebg-preview.png" alt="" />CarsYe
+                        
+                        </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

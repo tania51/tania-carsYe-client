@@ -71,6 +71,10 @@
     font-weight: bold;
 }
 .day .navbar .menu {
-    color: #0f1729;
+    color: #16234f;
     background-color: #ecceb5;
 }
+.day .navbar .icon-car {
+    color: #16234f;
+}
+
