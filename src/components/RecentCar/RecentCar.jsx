@@ -17,9 +17,9 @@ const RecentCar = () => {
     }, [])
 
     return (
-        <div className="px-20">
+        <div className="px-10 md:px-20">
             <Title>Recently Added Car</Title>
-            <div className="grid grid-cols-3 gap-6 mb-24">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
                 {
                     addCars.map(car => <RecentSingleCar key={car._id} car={car}></RecentSingleCar>)
                 }

@@ -32,11 +32,11 @@ const Navbar = () => {
 
     // const nightAndDayHandeler = () => 
 
-    const navLinks = <div className="space-x-5 text-lg uppercase font-semibold nav-active">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/addProduct">Add Car</NavLink>
-        <NavLink to="/myCart">My Cart</NavLink>
-        <NavLink className="pl-20" onClick={() => setMood(!mood)}>
+    const navLinks = <div className="space-x-2 md:space-x-5 text-base md:text-lg uppercase font-semibold nav-active">
+        <NavLink className="block md:inline py-3 md:pt-0 pl-2 md:pl-0" to="/">Home</NavLink>
+        <NavLink className="block md:inline" to="/addProduct">Add Car</NavLink>
+        <NavLink className="block md:inline py-3" to="/myCart">My Cart</NavLink>
+        <NavLink className="md:pl-20 inline" onClick={() => setMood(!mood)}>
             {
                 mood ? <ImSun className="inline-block text-2xl">
                     <script>{day}</script>

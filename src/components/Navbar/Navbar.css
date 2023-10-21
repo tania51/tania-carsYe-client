@@ -10,6 +10,10 @@
     background-color:rgb(249 239 230);
     color: #0f1729;
 }
+.day .navbar .active {
+    color: #ea580c;
+    font-weight: 700;
+}
 .day .navbar :hover {
     color: #0f1729;
 }
@@ -17,7 +21,7 @@
     background-color: rgb(236, 206, 181);
 }
 .day .card {
-    background-color:#f36e26;
+    background-color:#ed7d41;
     color: #fff;
     box-shadow: none;
 }
@@ -57,4 +61,16 @@
     color: #0a0f1b;
     font-weight: bold;
     font-size: 20px;
+}
+.day .card h2 > span:nth-child(2) {
+    color: #0a0f1b;
+    font-weight: bold;
+}
+.day .card p > span:nth-child(2) {
+    color: #0a0f1b;
+    font-weight: bold;
+}
+.day .navbar .menu {
+    color: #0f1729;
+    background-color: #ecceb5;
 }

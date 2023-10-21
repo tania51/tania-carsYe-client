@@ -92,7 +92,7 @@ const Details = () => {
             <Navbar></Navbar>
 
             {/* details main content */}
-            <div className="px-20 pt-36 pb-32">
+            <div className="px-10 md:px-20 pt-36 pb-32">
                 <div className="card bg-base-100 shadow-xl">
                     <figure><img src={singleCar && singleCar.Image} alt="Shoes" /></figure>
                     <div className="card-body">

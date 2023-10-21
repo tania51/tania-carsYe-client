@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import Button from "./Button/Button";
+import Title from "./Title/Title";
 
 
 
@@ -45,11 +46,11 @@ const AddProductForm = () => {
     return (
         <div>
             {/* add products form */}
-            <div className="hero bg-base-200 px-32">
-                <div className="hero-content w-full mb-20 mt-40">
-                    <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 py-6 px-4">
+            <div className="hero bg-base-200 md:px-32">
+                <div className="hero-content p-0 md:gap-4 md:p-4 mb-20 mt-40">
+                    <div className="card md:flex-shrink-0 w-full shadow-2xl bg-base-100 py-6 md:px-4">
                         <form onSubmit={addCarHandeler}>
-                            <div className="card-body grid md:grid-cols-2 gap-x-5 mb-2 pb-0">
+                            <div className="card-body grid md:grid-cols-2 md:gap-x-5 mb-2 pb-0">
                                 {/* car name */}
                                 <div className="form-control">
                                     <label className="label">

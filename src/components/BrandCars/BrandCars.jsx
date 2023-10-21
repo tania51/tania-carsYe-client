@@ -17,9 +17,9 @@ const BrandCars = () => {
     }, [])
 
     return (
-        <div className="py-10 px-20">
+        <div className="py-3 md:py-10 px-10 md:px-20">
             <Title>Latest Brand Cars</Title>
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-14">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 md:gap-14">
                 {
                     cars && cars.map(car => <SingleCar key={car.id} car={car}></SingleCar>)
                 }

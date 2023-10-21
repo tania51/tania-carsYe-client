@@ -3,9 +3,9 @@ import Title from "../Title/Title";
 
 const FAQ = () => {
     return (
-        <div className="px-20">
+        <div className="px-10 md:px-20 pt-9 md:pt-0">
             <Title>Fequently Asked Questions</Title>
-            <div className="space-y-4 mb-20">
+            <div className="space-y-4 mb-20 mt-6 md:mt-0">
 
                 {/* question: 01 */}
             <details className="collapse bg-[#0c1222] collapse-plus -mt-5 rounded-md">

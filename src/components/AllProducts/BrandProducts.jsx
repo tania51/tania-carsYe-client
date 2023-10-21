@@ -48,33 +48,36 @@ const BrandProducts = () => {
 
             {/* single brand all cars */}
             <div>
-                <div className="mb-32">
+                <div className="mb-16 md:mb-32">
                     {
                         cars.slice(0, 1).map(car =>
-                            <Slider key={car._id} car={car}></Slider>)
+                            <Slider key={car._id} car={car}></Slider>) 
                     }
                 </div>
 
-                <div className="px-20 pb-32">
-                    <div>
-                        {
-                            cars.slice(0, 1).map(car =>
-                                <>
-                                    <Title>{car.brandName} Latest Cars</Title>
-                                </>
-                            )
-                        }
-                    </div>
+                <div>
+
                     {
-                        cars.length === 0 ? <div className="h-[70vh] flex justify-center items-center"><h2 className="text-5xl text-white text-center">No Car Found..</h2></div>
-                        :
-                        <div className="grid md:grid-cols-2 gap-6">
-                            {
-                            cars.map(car =>
-                                <SingleBrandCars key={car?._id} car={car}></SingleBrandCars>
-                            )
-                            }
-                        </div>
+                        cars.length === 0 ? <div className="h-[70vh] -mt-32 pt-0 flex justify-center items-center"><h2 className="text-5xl text-orange-500 text-center mt-20 md:mt-0">No Car Found.. <br /></h2></div>
+                            :
+                            <div className="px-10 md:px-20 pb-32">
+                                <div>
+                                    {
+                                        cars.slice(0, 1).map(car =>
+                                            <>
+                                                <Title>{car.brandName} Latest Cars</Title>
+                                            </>
+                                        )
+                                    }
+                                </div>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    {
+                                        cars.map(car =>
+                                            <SingleBrandCars key={car?._id} car={car}></SingleBrandCars>
+                                        )
+                                    }
+                                </div>
+                            </div>
                     }
                     {/* <div className="grid md:grid-cols-2 gap-6">
                         {

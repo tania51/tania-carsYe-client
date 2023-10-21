@@ -10,6 +10,8 @@ import Swal from "sweetalert2";
 const MyCart = () => {
 
     const carLoader = useLoaderData();
+    const [usersCar, setUsersCar] = useState([]);
+    // const [remainigCar, setRemainingCar] = useState(carLoader);
     const { user, loading } = useContext(AuthContext);
     if(loading) {
         return <div className="w-full flex justify-center h-screen items-center">
@@ -18,7 +20,8 @@ const MyCart = () => {
     }
 
     
-    const [usersCar, setUsersCar] = useState([]);
+    
+
     useEffect(() => {
         const usersCar2 = carLoader && carLoader.filter(car => car.email === user.email);
         setUsersCar(usersCar2);
@@ -57,9 +60,10 @@ const MyCart = () => {
                                 'Your file has been deleted.',
                                 'success'
                             )
-                            //   const remainig =  cars.filter(car => car._id === _id)
-                            // //   setCars(remainig);
-                            // console.log(remainig);
+                              const remainig =  usersCar.filter(car => car._id !== id)
+                              setUsersCar(remainig)
+                            //   setCars(remainig);
+                            console.log(remainig);
 
                         }
                     })
@@ -76,9 +80,9 @@ const MyCart = () => {
             {/* users all cars are here using card */}
             <div className="pt-40 pb-20">
                 {
-                    usersCar.length === 0 ? <div className="h-[70vh] flex justify-center items-center"><h2 className="text-5xl text-white text-center">No Car Found.. <br /> Please First Add Some Car !!</h2></div>
+                    usersCar.length === 0 ? <div className="h-[60vh] flex justify-center items-center"><h2 className="text-5xl text-orange-500 text-center">No Car Found.. <br /> Please First Add Some Car !!</h2></div>
                         :
-                        <div className="grid md:grid-cols-2 gap-6 px-20">
+                        <div className="grid md:grid-cols-2 gap-6 px-10 md:px-20">
                             {
                                 usersCar.map((aCar) => <div key={aCar._id}>
                                     <div className="card bg-base-100 shadow-xl">
