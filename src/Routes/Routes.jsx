@@ -35,17 +35,17 @@ import Update from "../components/Update/Update";
         },
         {
           path: "/details/:id",
-          element: <Details></Details>,
+          element: <PrivateRoute><Details></Details></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:5001/brandProducts/${params.id}`)
         },
         {
           path: "/myCart",
-          element: <MyCart></MyCart>,
+          element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
           loader: () => fetch('http://localhost:5001/myCart')
         },
         {
           path: "/update",
-          element: <Update></Update>
+          element: <PrivateRoute><Update></Update></PrivateRoute>,
         },
         {
           path: '/login',

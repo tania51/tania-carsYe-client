@@ -39,14 +39,6 @@ const BrandProducts = () => {
     return (
         <div>
             <Navbar></Navbar>
-            {/* {
-                cars.slice(0, 4).map(car => <Slider key={car?._id} car={car}></Slider>)
-            } */}
-            {/* <Slider cars={cars}>
-
-            </Slider> */}
-
-            {/* single brand all cars */}
             <div>
                 <div className="mb-16 md:mb-32">
                     {
@@ -79,13 +71,6 @@ const BrandProducts = () => {
                                 </div>
                             </div>
                     }
-                    {/* <div className="grid md:grid-cols-2 gap-6">
-                        {
-                            cars.map(car =>
-                                <SingleBrandCars key={car?._id} car={car}></SingleBrandCars>
-                            )
-                        }
-                    </div> */}
                 </div>
             </div>
 

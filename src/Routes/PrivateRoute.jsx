@@ -3,17 +3,19 @@ import { AuthContext } from "../Providers/AuthProvider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 
 
-const PrivateRoute = ( {children} ) => {
+const PrivateRoute = ({ children }) => {
 
-    const {user, loading} = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const location = useLocation();
     // console.log(location.pathname);
 
 
-    if(loading) {
-        <div><span className="loading loading-spinner text-error"></span></div>
+    if (loading) {
+        return <div className="w-full flex justify-center h-screen items-center">
+            <span className="loading loading-spinner text-error"></span>
+        </div>
     }
-    if(user) {
+    if (user) {
         return children;
     }
 

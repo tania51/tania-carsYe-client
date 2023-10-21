@@ -77,4 +77,7 @@
 .day .navbar .icon-car {
     color: #16234f;
 }
-
+.day form .register-text {
+    color: #16234f;
+    margin-left: 0px;
+}
