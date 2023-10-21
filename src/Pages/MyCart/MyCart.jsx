@@ -86,7 +86,7 @@ const MyCart = () => {
                             {
                                 usersCar.map((aCar) => <div key={aCar._id}>
                                     <div className="card bg-base-100 shadow-xl">
-                                        <figure><img src={aCar.Image} alt="Shoes" /></figure>
+                                        <figure><img className="h-72 w-full" src={aCar.Image} alt="Shoes" /></figure>
                                         <div className="card-body">
                                             <h2 className="card-title text-xl"><span className="text-bold">Car Name :</span> <span className="text-orange-500">{aCar.Name}</span></h2>
                                             <p className="text-lg"><span className="text-bold">Price :</span> {aCar.Price}</p>
