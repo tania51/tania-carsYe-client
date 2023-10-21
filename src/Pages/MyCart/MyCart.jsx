@@ -1,17 +1,17 @@
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import Button from "../../components/Button/Button";
 import Swal from "sweetalert2";
+import { useLoaderData } from "react-router-dom";
 
 
 const MyCart = () => {
 
     const carLoader = useLoaderData();
     const [usersCar, setUsersCar] = useState([]);
-    // const [remainigCar, setRemainingCar] = useState(carLoader);
     const { user, loading } = useContext(AuthContext);
     if(loading) {
         return <div className="w-full flex justify-center h-screen items-center">
@@ -19,24 +19,15 @@ const MyCart = () => {
         </div>
     }
 
-    
-    
 
     useEffect(() => {
         const usersCar2 = carLoader && carLoader.filter(car => car.email === user.email);
+        console.log(usersCar2);
         setUsersCar(usersCar2);
     }, [user.email, carLoader])
 
-    
-    // console.log(user.email);
-    
-
-
-    // console.log(usersCar);
 
     const deletedCar = id => {
-        // console.log('car deleted successfully');
-        // console.log(id);
 
         Swal.fire({
             title: 'Are you sure?',
@@ -48,7 +39,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5001/myCart/${id}`, {
+                fetch(`https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/myCart/${id}`, {
                     method: 'DELETE'
                 })
                     .then(result => result.json())
@@ -91,8 +82,7 @@ const MyCart = () => {
                                             <h2 className="card-title text-xl"><span className="text-bold">Car Name :</span> <span className="text-orange-500">{aCar.Name}</span></h2>
                                             <p className="text-lg"><span className="text-bold">Price :</span> {aCar.Price}</p>
                                             <div className="card-actions">
-                                                {/* <Link to={`/myCart/${id}`}>Delete</Link> */}
-                                                {/* {console.log(_id)} */}
+                                                
                                                 <Button><span onClick={() => deletedCar(aCar._id)}>Delete</span></Button>
                                             </div>
                                         </div>

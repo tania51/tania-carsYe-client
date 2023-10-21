@@ -73,7 +73,7 @@ const Registration = () => {
             <Navbar></Navbar>
 
             {/* login form */}
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen pt-40 pb-13 bg-base-200">
                 <div className="hero-content w-full">
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={registerHandeler} className="card-body">

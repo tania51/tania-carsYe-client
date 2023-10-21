@@ -27,7 +27,7 @@ const Details = () => {
     const [cars, setCars] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5001/brandProducts')
+        fetch('https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/brandProducts')
             .then(res => res.json())
             .then(data => {
                 setCars(data)
@@ -49,6 +49,7 @@ const Details = () => {
     }
 
     const emailAdd = { email: user?.email };
+    console.log(emailAdd);
     // const newCarInfoWithEmail = { SiImage, Name, email: user?.email }
     const newCarInfoWithEmail = { ...singleCar, ...emailAdd }
     delete newCarInfoWithEmail._id;
@@ -59,11 +60,12 @@ const Details = () => {
     const addToCartHandeler = () => {
         console.log('cart is clicked');
 
-        fetch('http://localhost:5001/myCart', {
+        fetch('https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/myCart', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
-            },
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
             body: JSON.stringify(newCarInfoWithEmail)
         })
             .then(res => res.json())
@@ -75,6 +77,7 @@ const Details = () => {
                 console.log(data)
             })
             .catch(err => {
+                console.log(err);
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',

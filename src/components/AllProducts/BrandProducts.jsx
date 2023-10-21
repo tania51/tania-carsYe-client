@@ -18,7 +18,7 @@ const BrandProducts = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5001/brandProducts')
+        fetch('https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/brandProducts')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

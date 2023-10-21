@@ -8,7 +8,7 @@ const Slider = ({car}) => {
     const [sliderImage, setSliderImage] = useState([]);
 
     useEffect( () => {
-        fetch('http://localhost:5001/sliderImage')
+        fetch('https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/sliderImage')
         .then(res => res.json())
         .then(data => {
             const filteredImages = data.find(img => img.brandName === car.brandName)
