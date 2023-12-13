@@ -27,7 +27,7 @@ const Details = () => {
     const [cars, setCars] = useState([])
 
     useEffect(() => {
-        fetch('https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/brandProducts')
+        fetch('http://localhost:5001/brandProducts')
             .then(res => res.json())
             .then(data => {
                 setCars(data)
@@ -60,7 +60,7 @@ const Details = () => {
     const addToCartHandeler = () => {
         console.log('cart is clicked');
 
-        fetch('https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/myCart', {
+        fetch('http://localhost:5001/myCart', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

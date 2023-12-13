@@ -8,7 +8,7 @@ const BrandCars = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-        fetch('https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/brandName')
+        fetch('http://localhost:5001/brandName')
             .then(result => result.json())
             .then(data => {
                 // console.log(data);

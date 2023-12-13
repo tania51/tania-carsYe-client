@@ -8,7 +8,7 @@ const RecentCar = () => {
     const [addCars, setAddCars] = useState([])
 
     useEffect(() => {
-        fetch('https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/addCar')
+        fetch('http://localhost:5001/addCar')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

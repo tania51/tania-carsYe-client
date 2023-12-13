@@ -10,7 +10,7 @@ const SingleBrandCars = ({ car }) => {
 
     return (
         <div>
-            <div className="card bg-[#0f1729] shadow-xl shadow-gray-800">
+            <div className="card bg-[#0f1729] shadow-xl shadow-gray-800"  data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
                 <figure><img className="h-72 w-full" src={Image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <div>

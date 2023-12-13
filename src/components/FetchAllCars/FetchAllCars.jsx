@@ -6,7 +6,7 @@ const FetchAllCars = ({children}) => {
     const [cars, setCars] = useState([])
 
     useEffect( () => {
-        fetch('https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/brandProducts')
+        fetch('http://localhost:5001/brandProducts')
         .then(res => res.json())
         .then(data => {
             setCars(data);

@@ -1,5 +1,14 @@
-# CarsYe
+<!-- # CarsYe -->
 # Live link: https://cars-ye.web.app/myCart
+
+# Unique Feature
+* Unique Feature-01: I added swipper js in my brand category route as a slider and also customize it
+* Unique Feature-02: Using AOS in home page main category and also all categories route but diffrent animation used
+
+# Project Selling line: 
+* This Project is about Cars, Branding Car have some categories also. Users can update or see details and can add car from add to cart button. Also user can add a car from Add Car page.
+* Solved Problem: When I try to update any car information I was facing a problem, I could not update all information together from server. Then I fixed that problem and now user can update car's information successfully.
+
 
 * My website have a FAQ section at home page.
 * I will post cars details form add car page and display them as a card in homepage.
