@@ -3,7 +3,7 @@
 
 # Unique Feature
 * Unique Feature-01: I added swipper js in my brand category route as a slider and also customize it
-* Unique Feature-02: Using AOS in home page main category and also all categories route but diffrent animation used
+* Unique Feature-02: Using AOS in home page main category and also all categories route but I used diffrent animation.
 
 # Project Selling line: 
 * This Project is about Cars, Branding Car have some categories also. Users can update or see details and can add car from add to cart button. Also user can add a car from Add Car page.
