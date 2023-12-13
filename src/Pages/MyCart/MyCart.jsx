@@ -39,7 +39,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5001/myCart/${id}`, {
+                fetch(`https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/myCart/${id}`, {
                     method: 'DELETE'
                 })
                     .then(result => result.json())

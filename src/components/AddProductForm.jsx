@@ -22,7 +22,7 @@ const AddProductForm = () => {
 
         console.log(addCarInfo);
 
-        fetch('http://localhost:5001/addCar', {
+        fetch('https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/addCar', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

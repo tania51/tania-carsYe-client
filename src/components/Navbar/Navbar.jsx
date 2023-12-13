@@ -36,17 +36,17 @@ const Navbar = () => {
         <NavLink className="block md:inline py-3 md:pt-0 pl-2 md:pl-0" to="/">Home</NavLink>
         <NavLink className="block md:inline" to="/addProduct">Add Car</NavLink>
         <NavLink className="block md:inline py-3" to="/myCart">My Cart</NavLink>
-        <NavLink className="inline" onClick={() => setMood(!mood)}>
+        <button className="inline" onClick={() => setMood(!mood)}>
             {
-                mood ? <ImSun className="inline-block text-2xl">
-                    <script>{day}</script>
-                </ImSun>
+                mood ? <ImSun className="inline-block text-2xl"><script>{
+                    document.getElementById('root').classList.remove('day')
+                }</script></ImSun>
                 :
-                <MdNightlight className="inline-block text-2xl"><script>{
-                        document.getElementById('root').classList.remove('day')
-                    }</script></MdNightlight>
+                <MdNightlight className="inline-block text-2xl">
+                    <script>{day}</script>
+                </MdNightlight>
             }
-        </NavLink>
+        </button>
     </div>
     
     return (

@@ -31,17 +31,17 @@ import Update from "../components/Update/Update";
         {
           path: "/brandProducts/:brandName",
           element: <BrandProducts></BrandProducts>,
-          loader: ({params}) => fetch(`http://localhost:5001/brandProducts/${params.brandName}`)
+          loader: ({params}) => fetch(`https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/brandProducts/${params.brandName}`)
         },
         {
           path: "/details/:id",
           element: <PrivateRoute><Details></Details></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5001/brandProducts/${params.id}`)
+          loader: ({params}) => fetch(`https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/brandProducts/${params.id}`)
         },
         {
           path: "/myCart",
           element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-          loader: () => fetch('http://localhost:5001/myCart')
+          loader: () => fetch('https://cars-ye-server-mktm605dq-tania-akters-projects.vercel.app/myCart')
         },
         {
           path: "/update",
