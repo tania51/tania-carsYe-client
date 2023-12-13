@@ -7,6 +7,9 @@
 
 # Project Selling line: 
 * This Project is about Cars, Branding Car have some categories also. Users can update or see details and can add car from add to cart button. Also user can add a car from Add Car page.
+
+# Soved Problem
+
 * Solved Problem: When I try to update any car information I was facing a problem, I could not update all information together from server. Then I fixed that problem and now user can update car's information successfully.
 
 
