@@ -1,5 +1,5 @@
 <!-- # CarsYe -->
-# Live link: https://cars-ye.web.app/myCart
+# Live link: https://cars-ye.web.app
 
 # Unique Feature
 * Unique Feature-01: I added swipper js in my brand category route as a slider and also customize it
@@ -12,7 +12,7 @@
 
 * Solved Problem: When I try to update any car information I was facing a problem, I could not update all information together from server. Then I fixed that problem and now user can update car's information successfully.
 
-
+# About my website
 * My website have a FAQ section at home page.
 * I will post cars details form add car page and display them as a card in homepage.
 * At navbar displays icons so when user click on the day mood website will automatically shows day and when click on night it'll be a night mood website.
